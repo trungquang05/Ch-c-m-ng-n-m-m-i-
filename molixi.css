@@ -1,0 +1,57 @@
+.present-box .side.top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: url("https://image.dienthoaivui.com.vn/x,webp,q90/https://dashboard.dienthoaivui.com.vn/uploads/wp-content/uploads/2022/12/background-tet1.jpg")
+    no-repeat center/cover; /* Thêm hình nền */
+  border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform-origin: top center;
+  transition: transform 1.5s ease-in-out; /* Hiệu ứng lật nắp */
+  z-index: 15; /* Đảm bảo nắp nằm trên nội dung */
+}
+
+.present-box.open .side.top {
+  transform: rotateX(-150deg); /* Lật nắp bao lì xì */
+}
+
+.present {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.3); /* Tạo hiệu ứng mờ */
+  border-radius: 10px;
+  transition: opacity 2s ease-in-out, visibility 1s ease-in-out;
+  z-index: 20;
+}
+
+.present-box.open .present {
+  opacity: 1;
+  visibility: visible;
+}
+
+.img-wrap img {
+  animation: scaleUp 2s ease-in-out forwards; /* Thêm hiệu ứng khi hình ảnh xuất hiện */
+}
+
+/* Keyframes cho hiệu ứng phóng to hình ảnh */
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.5); /* Bắt đầu nhỏ */
+    opacity: 0; /* Mờ */
+  }
+  100% {
+    transform: scale(1); /* Kích thước bình thường */
+    opacity: 1; /* Hiện rõ */
+  }
+}

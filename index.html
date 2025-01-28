@@ -1,0 +1,267 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Tìm lixi năm mới 🎁</title>
+      <link rel="stylesheet" href="molixi.css" />
+      <link rel="stylesheet" href="lixi.js" />
+      <style>
+        body {
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          background: url("https://inuvdp.com/wp-content/uploads/2024/11/Download-10-File-Background-Tet-Mau-Vang-Vector-Dep-3.png")
+            no-repeat center center;
+          background-size: cover; 
+          
+        }
+
+        .present-box {
+          width: 400px;
+          height: 500px;
+          background: linear-gradient(90deg, #ca7575, #b56565);
+          border: 5px solid rgb(189, 11, 64);
+          border-radius: 10px;
+          position: relative;
+          cursor: pointer;
+          transform-style: preserve-3d;
+          transition: transform 5s;
+          z-index: 10;
+          background-image: url("https://img.pikbest.com/backgrounds/20181210/festive-red-copper-money-lucky-bag-background-image_2795766.jpg!w700wp");
+          background-size: cover; 
+          background-position: center; 
+        }
+
+        .present-box.open .side.top {
+          transform: rotateX(-100deg);
+          transform-origin: top center;
+        }
+        .present {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 1s, visibility 1s;
+          background: #8c394f;
+          border-radius: 10px;
+          z-index: 20; 
+        }
+
+        .present-box.open .present {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .img-wrap {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+        }
+
+        .img-wrap img {
+          max-width: 98%; 
+          max-height: 98%;
+          object-fit: contain;
+          border: 5px solid gold;
+          border-radius: 10px;
+        }
+
+        .side.top .to {
+          position: absolute;
+          top: 50px;
+          left: 50%;
+          transform: translateX(-50%);
+          text-align: center;
+          color: #d60f0f;
+          font-family: "Brush Script MT", cursive;
+          font-size: 45px;
+          animation: alternate 2s;
+        }
+        @keyframes blink {
+          0%,
+          100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0;
+          }
+        }
+        .name {
+          position: absolute; 
+          bottom: -230%; 
+          left: 50%; 
+          transform: translateX(-50%); 
+          color: rgb(214, 18, 18);
+          animation: blink 2s infinite;
+          font-size: 40px;
+          font-weight: bold;
+          text-shadow: 2px 1px 2px #000; 
+        }
+
+        @keyframes fall {
+          to {
+            transform: translateY(100vh) rotate(360deg) translateX(-20px);
+          }
+        }
+      </style>
+    </head>
+    <body>
+
+      <style>
+        .petal {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background: pink;
+          border-radius: 50%;
+          box-shadow: -5px -5px 0 rgba(255, 192, 203, 0.6);
+          opacity: 0.8;
+          animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+          0% {
+            transform: translateY(-100px) rotate(0deg);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(110vh) rotate(360deg);
+            opacity: 0;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <script>
+       
+        function createPetal() {
+          const petal = document.createElement("div");
+          petal.classList.add("petal");
+          petal.style.left = Math.random() * window.innerWidth + "px"
+          petal.style.animationDuration = Math.random() * 3 + 2 + "s";
+          const size = Math.random() * 10 + 10;
+          petal.style.width = size + "px";
+          petal.style.height = size + "px";
+
+          document.body.appendChild(petal);
+          petal.addEventListener("animationend", () => {
+            petal.remove();
+          });
+        }
+        setInterval(createPetal, 200);
+      </script>
+    </body>
+  </html>
+
+      <div class="present-box" onclick="openEnvelope()">
+        <div class="side top">
+          <div class="to">
+            Chúc Mừng Năm Mới!
+            <div class="name">bóc lì xì online nào😊_trquang05_</div>
+          </div>
+        </div>
+        <div class="side bottom"></div>
+        <div class="present">
+          <div class="img-wrap">
+            <a
+              href="https://trungquang05.github.io/lixi/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://i.pinimg.com/originals/be/79/7d/be797dddeb7990621c108902cf0881b4.gif"
+                alt="Bao lì xì"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <audio id="backgroundMusic" loop>
+        <source
+          src="yt1s.com - MỘT NĂM MỚI BÌNH AN x CHINA J  MinhAk Remix  Nhạc tết remix.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+
+      <script>
+        const envelope = document.querySelector(".present-box");
+        const music = document.getElementById("backgroundMusic");
+        let isMusicPlaying = false;
+
+        function openEnvelope() {
+          envelope.classList.add("open");
+          if (!isMusicPlaying) {
+            music.play();
+            isMusicPlaying = true;
+          }
+        }
+
+        function toggleMusic(event) {
+          event.preventDefault();
+          event.stopPropagation();
+
+          if (isMusicPlaying) {
+            music.pause();
+            isMusicPlaying = false;
+          } else {
+            music.play();
+            isMusicPlaying = true;
+          }
+        }
+      </script>
+      <style>
+        h5 {
+          position: fixed;
+          bottom: 30px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 30px;
+          text-align: center;
+          z-index: 100;
+          background: linear-gradient(90deg, red, green, blue, violet, black);
+          background-size: 300%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: sparkle 5s infinite linear;
+        }
+
+        @keyframes sparkle {
+          0% {
+            background-position: 0% 50%;
+          }
+          100% {
+            background-position: 100% 50%;
+          }
+        }
+
+        h15 {
+          position: fixed;
+          bottom: 10px; 
+          left: 50%; 
+          transform: translateX(-50%); 
+          color: red;
+          font-size: 18px;
+          text-align: center;
+          z-index: 100;
+        }
+      </style>
+      <h15
+        >ps: Mọi thứ đến mức càng lớn càng khó kiểm soát nên việc không thể căn
+        vừa background là bt nhé😪(nên dùng mt) _trquang05_</h15
+      >
+      <h5>// hãy tìm đến 1 thứ gì đó thử vận may nhé💝 //</h5>
+    </body>
+  </html>

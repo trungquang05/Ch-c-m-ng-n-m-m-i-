@@ -1,0 +1,36 @@
+/* Nội dung bên trong bao lì xì */
+.present-box .present {
+  position: absolute;
+  width: 100%; /* Đảm bảo nội dung bao phủ đúng kích thước của bao lì xì */
+  height: 100%;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  display: flex; /* Sử dụng flexbox để căn giữa */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  background: radial-gradient(circle, #fffde7, #ffefc1); /* Hiệu ứng nền sáng */
+  border-radius: 10px;
+  transform: translateY(50px);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Đổ bóng để tạo chiều sâu */
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+/* Khung ảnh hoặc nội dung */
+.present-box .present .img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%; /* Đảm bảo ảnh vừa vặn trong bao lì xì */
+  height: 80%;
+}
+
+.present-box .present .img-wrap img {
+  max-width: 100%; /* Đảm bảo hình ảnh không vượt quá khung */
+  max-height: 100%;
+  height: auto;
+  border: 5px solid gold;
+  border-radius: 10px; /* Góc bo mềm mại */
+  object-fit: contain; /* Đảm bảo giữ tỉ lệ của ảnh */
+}
