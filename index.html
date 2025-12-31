@@ -222,49 +222,73 @@
           }
         }
       </script>
-      <style>
-        h5 {
-          position: fixed;
-          bottom: 30px;
-          left: 50%;
-          transform: translateX(-50%);
-          font-size: 30px;
-          text-align: center;
-          z-index: 100;
-          background: linear-gradient(90deg, red, green, blue, violet, black);
-          background-size: 300%;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: sparkle 5s infinite linear;
-        }
+    <style>
+  .footer-box {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(92%, 900px);
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
+    text-align: center;
+    z-index: 100;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  }
 
-        @keyframes sparkle {
-          0% {
-            background-position: 0% 50%;
-          }
-          100% {
-            background-position: 100% 50%;
-          }
-        }
+  h5 {
+    margin: 0 0 8px 0;
+    font-size: clamp(18px, 2.2vw, 26px);
+    font-weight: 700;
+    line-height: 1.4;
 
-        h15 {
-          position: fixed;
-          bottom: 10px; 
-          left: 50%; 
-          transform: translateX(-50%); 
-          color: red;
-          font-size: 18px;
-          text-align: center;
-          z-index: 100;
-        }
-      </style>
-      <h15
-        >ps: Mọi thứ đến mức càng lớn càng khó kiểm soát nên việc không thể căn
-        vừa background là bt nhé:))(nên dùng mt) _trquang05_</h15
-      >
-      <h5>//chúc Thùy Linh một năm 2026 vui vẻ, gần đến đợt thi rồi chúc b 1 đợt thi thật tốt
-        và luôn có niềm nhiệt huyết của 1 người học y nha 💙
-        hãy tìm đến 1 thứ gì đó thử vận may nhé💝 //</h5>
+    background: linear-gradient(
+      90deg,
+      #ff2d2d,
+      #ffb347,
+      #ffe066
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: glowMove 6s linear infinite;
+  }
+
+  @keyframes glowMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+
+  h15 {
+    display: block;
+    font-size: clamp(12px, 1.5vw, 14px);
+    color: #ffd6d6;
+    opacity: 0.85;
+    line-height: 1.3;
+  }
+</style>
+<div class="footer-box">
+  <h5>
+    // Chúc Thùy Linh một năm 2026 vui vẻ 🌸 <br />
+    Gần đến đợt thi rồi, chúc bạn một kỳ thi thật tốt <br />
+    và luôn giữ được nhiệt huyết của một điều dưỡng nha 💙 <br />
+    Hãy thử vận may của mình nhé 💝 //
+  </h5>
+
+  <h15>
+    ps: Mọi thứ càng phức tạp càng khó kiểm soát => lệch background là bình thường nha :))
+    (nên dùng mt để giảm bớt:)) _trquang05_
+  </h15>
+</div>
+
     </body>
   </html>
+
 
